@@ -29,7 +29,7 @@ public class SwingAppExample {
         nameLabel = new JLabel("Enter your name:");
         nameLabel.setFont(new Font("Arial", Font.BOLD, 20)); // Increase the font size and style
         nameField = new JTextField(20);
-        submitButton = new JButton("Submit");
+        submitButton = new JButton("Enter");
 
         panel.add(nameLabel);
         panel.add(nameField);
