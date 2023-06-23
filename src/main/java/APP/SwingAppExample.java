@@ -13,13 +13,15 @@ public class SwingAppExample {
     private JLabel nameLabel;
     private JTextField nameField;
     private JButton submitButton;
+    HyperlinkAlgebra hyperlinkAlgebra = new HyperlinkAlgebra();
+    HyperLinkGeometry hyperLinkGeometry = new HyperLinkGeometry();
 
     private String name;
     Theory theory = new Theory();
 
     public SwingAppExample() {
         frame = new JFrame("Swing App Example");
-        frame.setPreferredSize(new Dimension(400, 200)); // Set the preferred size of the frame
+        frame.setPreferredSize(new Dimension(1280, 720)); // Set the preferred size of the frame
         panel = new JPanel();
         panel.setLayout(new FlowLayout());
 
@@ -110,12 +112,21 @@ public class SwingAppExample {
         choiceLabel.setFont(new Font("Arial", Font.BOLD, 24));
         JLabel additionalLabel = new JLabel(additionalString);
         additionalLabel.setFont(new Font("Arial", Font.PLAIN, 16)); // Set the font for the additionalLabel
+        JLabel algebraLink = hyperlinkAlgebra.algebraLink();
+        JLabel geometryLink = hyperLinkGeometry.geometryLink();
         JButton backButton = new JButton("Back");
 
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         panel.add(choiceLabel);
         panel.add(Box.createVerticalStrut(10));
         panel.add(additionalLabel);
+        panel.add(Box.createVerticalStrut(20));
+        if (choice.equals("Algebra - Theory") ){
+            panel.add(algebraLink);
+        }
+        if (choice.equals("Geometry - Theory")) {
+            panel.add(geometryLink);
+        }
         panel.add(Box.createVerticalStrut(20));
         panel.add(backButton);
 
@@ -130,6 +141,7 @@ public class SwingAppExample {
     }
 
     public static void main(String[] args) {
+
         SwingAppExample app = new SwingAppExample();
     }
 }
