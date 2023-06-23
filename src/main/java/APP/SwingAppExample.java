@@ -1,5 +1,7 @@
 package APP;
 
+import backEnd.Theory;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -13,6 +15,7 @@ public class SwingAppExample {
     private JButton submitButton;
 
     private String name;
+    Theory theory = new Theory();
 
     public SwingAppExample() {
         frame = new JFrame("Swing App Example");
@@ -67,30 +70,30 @@ public class SwingAppExample {
         panel.add(greetingLabel);
         panel.add(Box.createVerticalStrut(20));
         panel.add(choicesLabel);
-        panel.add(Box.createVerticalStrut(20));
+        panel.add(Box.createVerticalStrut(10));
         panel.add(choicesPanel);
 
         algebraTheoryButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                showPanel("Algebra - Theory");
+                showPanel("Algebra - Theory", theory.AlgebraTheory());
             }
         });
 
         algebraExercisesButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                showPanel("Algebra - Exercises");
+                showPanel("Algebra - Exercises","");
             }
         });
 
         geometryTheoryButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                showPanel("Geometry - Theory");
+                showPanel("Geometry - Theory","");
             }
         });
 
         geometryExercisesButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                showPanel("Geometry - Exercises");
+                showPanel("Geometry - Exercises","");
             }
         });
 
@@ -98,17 +101,21 @@ public class SwingAppExample {
         frame.setMinimumSize(new Dimension(frame.getWidth(), frame.getHeight()));
     }
 
-    private void showPanel(String choice) {
+    private void showPanel(String choice, String additionalString) {
         panel.removeAll();
         panel.revalidate();
         panel.repaint();
 
         JLabel choiceLabel = new JLabel(choice);
         choiceLabel.setFont(new Font("Arial", Font.BOLD, 24));
+        JLabel additionalLabel = new JLabel(additionalString);
+        additionalLabel.setFont(new Font("Arial", Font.PLAIN, 16)); // Set the font for the additionalLabel
         JButton backButton = new JButton("Back");
 
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         panel.add(choiceLabel);
+        panel.add(Box.createVerticalStrut(10));
+        panel.add(additionalLabel);
         panel.add(Box.createVerticalStrut(20));
         panel.add(backButton);
 
