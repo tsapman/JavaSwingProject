@@ -22,7 +22,7 @@ public class SwingAppExample {
 
     public SwingAppExample() {
         frame = new JFrame("Swing App Example");
-        frame.setPreferredSize(new Dimension(1280, 720)); // Set the preferred size of the frame
+        frame.setPreferredSize(new Dimension(800, 440)); // Set the preferred size of the frame
         panel = new JPanel();
         panel.setLayout(new FlowLayout());
 
@@ -86,9 +86,18 @@ public class SwingAppExample {
             public void actionPerformed(ActionEvent e) {
                 arithmeticPanel = new ArithmeticPanel();
                 panel.removeAll();
-                panel.add(arithmeticPanel);
                 panel.revalidate();
                 panel.repaint();
+                panel.add(arithmeticPanel);
+                JButton backButton = new JButton("Back");
+                panel.add(Box.createVerticalStrut(20));
+                panel.add(backButton);
+
+                backButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        showChoicesPanel();
+                    }
+                });
             }
         });
 
