@@ -15,6 +15,7 @@ public class SwingAppExample {
     private JButton submitButton;
     HyperlinkAlgebra hyperlinkAlgebra = new HyperlinkAlgebra();
     HyperLinkGeometry hyperLinkGeometry = new HyperLinkGeometry();
+    private ArithmeticPanel arithmeticPanel;
 
     private String name;
     Theory theory = new Theory();
@@ -83,7 +84,11 @@ public class SwingAppExample {
 
         algebraExercisesButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                showPanel("Algebra - Exercises","");
+                arithmeticPanel = new ArithmeticPanel();
+                panel.removeAll();
+                panel.add(arithmeticPanel);
+                panel.revalidate();
+                panel.repaint();
             }
         });
 

@@ -107,15 +107,5 @@ public class ArithmeticPanel extends JPanel {
         DIVIDE
     }
 
-    public JPanel getInputLabel(){
-        return inputPanel;
-    }
 
-    public JLabel getResultLabel() {
-        return resultLabel;
-    }
-
-    public JPanel getButtonPanel() {
-        return buttonPanel;
-    }
 }
