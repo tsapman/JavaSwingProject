@@ -4,8 +4,6 @@ import backEnd.Theory;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class SwingAppExample {
     private JFrame frame;
@@ -16,7 +14,7 @@ public class SwingAppExample {
     HyperlinkAlgebra hyperlinkAlgebra = new HyperlinkAlgebra();
     HyperLinkGeometry hyperLinkGeometry = new HyperLinkGeometry();
     private ArithmeticPanel arithmeticPanel;
-    MathQuizGame2 mathQuizGame2;
+    MathQuiz mathQuiz;
 
     private String name;
     Theory theory = new Theory();
@@ -98,7 +96,7 @@ public class SwingAppExample {
 
         mathQuizButton.addActionListener(e -> {
 
-            mathQuizGame2 = new MathQuizGame2();
+            mathQuiz = new MathQuiz();
         });
 
         frame.pack();

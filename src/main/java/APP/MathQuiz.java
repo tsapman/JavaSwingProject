@@ -15,7 +15,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class MathQuizGame2 extends JFrame implements ActionListener {
+public class MathQuiz extends JFrame implements ActionListener {
     QuizGame quizGame = new QuizGame();
 
     JLabel titleLabel = new JLabel("Math Quiz");
@@ -52,7 +52,7 @@ public class MathQuizGame2 extends JFrame implements ActionListener {
 
     final int LIMIT = 10;
 
-    public MathQuizGame2() {
+    public MathQuiz() {
 
         setLayout(new FlowLayout());
         add(titleLabel);
@@ -195,7 +195,7 @@ public class MathQuizGame2 extends JFrame implements ActionListener {
             questionLabel.setForeground(Color.yellow);
         }
         if (e.getSource() == restartButton) {
-            new MathQuizGame2();
+            new MathQuiz();
             this.setVisible(false);
         }
 
