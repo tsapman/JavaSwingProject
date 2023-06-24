@@ -8,8 +8,6 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -140,7 +138,6 @@ public class MathQuiz extends JFrame implements ActionListener {
         exitButton.addActionListener(this);
 
         setTitle("Math Quiz");
-        setIconImage(new ImageIcon("clipart.png").getImage());
         setSize(600, 500);
         setLocation(900, 100);
         setResizable(false);
