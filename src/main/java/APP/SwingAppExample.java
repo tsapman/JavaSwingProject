@@ -4,8 +4,10 @@ import backEnd.Theory;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class SwingAppExample {
+public class SwingAppExample implements ActionListener {
     private JFrame frame;
     private JPanel panel;
     private JLabel nameLabel;
@@ -27,14 +29,23 @@ public class SwingAppExample {
 
         nameLabel = new JLabel("Enter your name:");
         nameLabel.setFont(new Font("Arial", Font.BOLD, 20)); // Increase the font size and style
-        nameField = new JTextField(20);
+        nameField = new JTextField(10);
         submitButton = new JButton("Enter");
+
+        Font answerFont = new Font("Tahoma", Font.BOLD, 28);
+        nameField.setFont(answerFont);
+
 
         panel.add(nameLabel);
         panel.add(nameField);
         panel.add(submitButton);
 
         submitButton.addActionListener(e -> {
+            name = nameField.getText();
+            showChoicesPanel();
+        });
+
+        nameField.addActionListener(e -> {
             name = nameField.getText();
             showChoicesPanel();
         });
@@ -139,5 +150,10 @@ public class SwingAppExample {
     public static void main(String[] args) {
 
         SwingAppExample app = new SwingAppExample();
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
     }
 }
