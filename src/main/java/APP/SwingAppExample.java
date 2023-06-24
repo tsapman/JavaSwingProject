@@ -32,7 +32,7 @@ public class SwingAppExample implements ActionListener {
         nameField = new JTextField(10);
         submitButton = new JButton("Enter");
 
-        Font answerFont = new Font("Tahoma", Font.BOLD, 28);
+        Font answerFont = new Font("Tahoma", Font.BOLD, 24);
         nameField.setFont(answerFont);
 
 
@@ -105,10 +105,7 @@ public class SwingAppExample implements ActionListener {
 
         geometryExercisesButton.addActionListener(e -> showPanel("Geometry - Exercises",""));
 
-        mathQuizButton.addActionListener(e -> {
-
-            mathQuiz = new MathQuiz();
-        });
+        mathQuizButton.addActionListener(e -> mathQuiz = new MathQuiz());
 
         frame.pack();
         frame.setMinimumSize(new Dimension(frame.getWidth(), frame.getHeight()));
