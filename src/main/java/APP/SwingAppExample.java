@@ -16,6 +16,7 @@ public class SwingAppExample {
     HyperlinkAlgebra hyperlinkAlgebra = new HyperlinkAlgebra();
     HyperLinkGeometry hyperLinkGeometry = new HyperLinkGeometry();
     private ArithmeticPanel arithmeticPanel;
+    MathQuizGame2 mathQuizGame2;
 
     private String name;
     Theory theory = new Theory();
@@ -61,13 +62,13 @@ public class SwingAppExample {
         JButton algebraExercisesButton = new JButton("Algebra - Exercises");
         JButton geometryTheoryButton = new JButton("Geometry - Theory");
         JButton geometryExercisesButton = new JButton("Geometry - Exercises");
-        JButton mathQuiz = new JButton("Math Quiz");
+        JButton mathQuizButton = new JButton("Math Quiz");
 
         choicesPanel.add(algebraTheoryButton);
         choicesPanel.add(algebraExercisesButton);
         choicesPanel.add(geometryTheoryButton);
         choicesPanel.add(geometryExercisesButton);
-        choicesPanel.add(mathQuiz);
+        choicesPanel.add(mathQuizButton);
 
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         panel.add(greetingLabel);
@@ -94,6 +95,11 @@ public class SwingAppExample {
         geometryTheoryButton.addActionListener(e -> showPanel("Geometry - Theory",""));
 
         geometryExercisesButton.addActionListener(e -> showPanel("Geometry - Exercises",""));
+
+        mathQuizButton.addActionListener(e -> {
+
+            mathQuizGame2 = new MathQuizGame2();
+        });
 
         frame.pack();
         frame.setMinimumSize(new Dimension(frame.getWidth(), frame.getHeight()));
