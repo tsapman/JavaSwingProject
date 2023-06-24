@@ -24,18 +24,24 @@ public class SwingAppExample implements ActionListener {
     public SwingAppExample() {
         frame = new JFrame("Swing App Example");
         frame.setPreferredSize(new Dimension(800, 440)); // Set the preferred size of the frame
+        frame.setResizable(false);
         panel = new JPanel();
         panel.setLayout(new FlowLayout());
-
+        JLabel titleOfApp = new JLabel("Welcome to Become a Math Legend App!!");
         nameLabel = new JLabel("Enter your name:");
         nameLabel.setFont(new Font("Arial", Font.BOLD, 20)); // Increase the font size and style
         nameField = new JTextField(10);
         submitButton = new JButton("Enter");
 
-        Font answerFont = new Font("Tahoma", Font.BOLD, 24);
+        Font answerFont = new Font("Arial", Font.BOLD, 24);
+        Font titleFont = new Font("Arial",Font.BOLD,34);
         nameField.setFont(answerFont);
+        titleOfApp.setFont(titleFont);
+        titleOfApp.setForeground(Color.RED);
 
-
+        panel.setBackground(Color.ORANGE);
+        panel.add(titleOfApp);
+        panel.add(Box.createVerticalStrut(200));
         panel.add(nameLabel);
         panel.add(nameField);
         panel.add(submitButton);
@@ -60,6 +66,7 @@ public class SwingAppExample implements ActionListener {
         panel.removeAll();
         panel.revalidate();
         panel.repaint();
+        panel.setBackground(Color.white);
 
         JLabel greetingLabel = new JLabel("Hello, " + name + "!");
         greetingLabel.setFont(new Font("Arial", Font.BOLD, 24));
@@ -93,6 +100,7 @@ public class SwingAppExample implements ActionListener {
             panel.removeAll();
             panel.revalidate();
             panel.repaint();
+            panel.setBackground(Color.white);
             panel.add(arithmeticPanel);
             JButton backButton = new JButton("Back");
             panel.add(Box.createVerticalStrut(20));
@@ -115,6 +123,7 @@ public class SwingAppExample implements ActionListener {
         panel.removeAll();
         panel.revalidate();
         panel.repaint();
+        panel.setBackground(Color.white);
 
         JLabel choiceLabel = new JLabel(choice);
         choiceLabel.setFont(new Font("Arial", Font.BOLD, 24));

@@ -105,6 +105,7 @@ public class MathQuiz extends JFrame implements ActionListener {
         subButton.setBackground(Color.black);
         divButton.setBackground(Color.black);
         playButton.setBackground(Color.orange);
+        titleLabel.setBackground(Color.RED);
 
         titleLabel.setFont(titleFont);
         subTitle1Label.setFont(questionFont);
