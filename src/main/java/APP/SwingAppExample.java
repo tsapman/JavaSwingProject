@@ -35,11 +35,9 @@ public class SwingAppExample {
         panel.add(nameField);
         panel.add(submitButton);
 
-        submitButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                name = nameField.getText();
-                showChoicesPanel();
-            }
+        submitButton.addActionListener(e -> {
+            name = nameField.getText();
+            showChoicesPanel();
         });
 
         frame.getContentPane().add(panel);
@@ -57,17 +55,19 @@ public class SwingAppExample {
         greetingLabel.setFont(new Font("Arial", Font.BOLD, 24));
         JLabel choicesLabel = new JLabel("Select an option:");
         JPanel choicesPanel = new JPanel();
-        choicesPanel.setLayout(new GridLayout(2, 2, 10, 10)); // 2 rows, 2 columns with spacing
+        choicesPanel.setLayout(new GridLayout(3, 2, 10, 10)); // 2 rows, 2 columns with spacing
 
         JButton algebraTheoryButton = new JButton("Algebra - Theory");
         JButton algebraExercisesButton = new JButton("Algebra - Exercises");
         JButton geometryTheoryButton = new JButton("Geometry - Theory");
         JButton geometryExercisesButton = new JButton("Geometry - Exercises");
+        JButton mathQuiz = new JButton("Math Quiz");
 
         choicesPanel.add(algebraTheoryButton);
         choicesPanel.add(algebraExercisesButton);
         choicesPanel.add(geometryTheoryButton);
         choicesPanel.add(geometryExercisesButton);
+        choicesPanel.add(mathQuiz);
 
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         panel.add(greetingLabel);
@@ -76,42 +76,24 @@ public class SwingAppExample {
         panel.add(Box.createVerticalStrut(10));
         panel.add(choicesPanel);
 
-        algebraTheoryButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                showPanel("Algebra - Theory", theory.AlgebraTheory());
-            }
+        algebraTheoryButton.addActionListener(e -> showPanel("Algebra - Theory", theory.AlgebraTheory()));
+
+        algebraExercisesButton.addActionListener(e -> {
+            arithmeticPanel = new ArithmeticPanel();
+            panel.removeAll();
+            panel.revalidate();
+            panel.repaint();
+            panel.add(arithmeticPanel);
+            JButton backButton = new JButton("Back");
+            panel.add(Box.createVerticalStrut(20));
+            panel.add(backButton);
+
+            backButton.addActionListener(e1 -> showChoicesPanel());
         });
 
-        algebraExercisesButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                arithmeticPanel = new ArithmeticPanel();
-                panel.removeAll();
-                panel.revalidate();
-                panel.repaint();
-                panel.add(arithmeticPanel);
-                JButton backButton = new JButton("Back");
-                panel.add(Box.createVerticalStrut(20));
-                panel.add(backButton);
+        geometryTheoryButton.addActionListener(e -> showPanel("Geometry - Theory",""));
 
-                backButton.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        showChoicesPanel();
-                    }
-                });
-            }
-        });
-
-        geometryTheoryButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                showPanel("Geometry - Theory","");
-            }
-        });
-
-        geometryExercisesButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                showPanel("Geometry - Exercises","");
-            }
-        });
+        geometryExercisesButton.addActionListener(e -> showPanel("Geometry - Exercises",""));
 
         frame.pack();
         frame.setMinimumSize(new Dimension(frame.getWidth(), frame.getHeight()));
@@ -144,11 +126,7 @@ public class SwingAppExample {
         panel.add(Box.createVerticalStrut(20));
         panel.add(backButton);
 
-        backButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                showChoicesPanel();
-            }
-        });
+        backButton.addActionListener(e -> showChoicesPanel());
 
         frame.pack();
         frame.setMinimumSize(new Dimension(frame.getWidth(), frame.getHeight()));
