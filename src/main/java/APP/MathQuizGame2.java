@@ -1,11 +1,13 @@
 package APP;
 
+import backEnd.QuizGame;
+
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Random;
+
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -14,10 +16,12 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 public class MathQuizGame2 extends JFrame implements ActionListener {
+    QuizGame quizGame = new QuizGame();
 
-    JLabel titleLabel = new JLabel("");
-    JLabel subTitle1Label = new JLabel("===============");
-    JLabel subTitle2Label = new JLabel("===============");
+    JLabel titleLabel = new JLabel("Math Quiz");
+    JLabel subTitle1Label = new JLabel("Choose Operation to play with ->(x,+,-,/)");
+    JLabel subTitleBetween1And2 = new JLabel("-------------------------------------------------------------");
+    JLabel subTitle2Label = new JLabel("If you reach 10 wrong answers you lose");
     JLabel questionLabel = new JLabel();
     JLabel answerLabel = new JLabel("Answer: ");
     JLabel gameOverLabel = new JLabel();
@@ -36,16 +40,16 @@ public class MathQuizGame2 extends JFrame implements ActionListener {
     JTextField wrongCounterField = new JTextField(3);
 
     Font titleFont = new Font("Tahoma", Font.BOLD, 58);
-    Font questionFont = new Font("Tahoma", Font.BOLD, 48);
+    Font questionFont = new Font("Tahoma", Font.BOLD, 25);
     Font answerFont = new Font("Tahoma", Font.BOLD, 38);
 
-    Random random = new Random();
+
     int digit1;
     int digit2;
     int correctAnswer;
     String operator = "";
-    int rightCounter = 0;
-    int wrongCounter = 0;
+
+
     final int LIMIT = 10;
 
     public MathQuizGame2() {
@@ -54,6 +58,7 @@ public class MathQuizGame2 extends JFrame implements ActionListener {
         add(titleLabel);
         add(subTitle1Label);
         add(questionLabel);
+        add(subTitleBetween1And2);
         add(subTitle2Label);
         add(answerLabel);
         add(answerField);
@@ -77,6 +82,7 @@ public class MathQuizGame2 extends JFrame implements ActionListener {
         wrongCounterField.setVisible(false);
         questionLabel.setVisible(false);
         subTitle2Label.setVisible(false);
+        subTitleBetween1And2.setVisible(false);
         answerLabel.setVisible(false);
         answerField.setVisible(false);
         mulButton.setVisible(false);
@@ -105,6 +111,7 @@ public class MathQuizGame2 extends JFrame implements ActionListener {
         titleLabel.setFont(titleFont);
         subTitle1Label.setFont(questionFont);
         subTitle2Label.setFont(questionFont);
+        subTitleBetween1And2.setFont(questionFont);
         questionLabel.setFont(questionFont);
         answerLabel.setFont(answerFont);
         answerField.setFont(answerFont);
@@ -132,7 +139,7 @@ public class MathQuizGame2 extends JFrame implements ActionListener {
         restartButton.addActionListener(this);
         exitButton.addActionListener(this);
 
-        setTitle("Math Quiz Game: Version 2.0");
+        setTitle("Math Quiz");
         setIconImage(new ImageIcon("clipart.png").getImage());
         setSize(600, 500);
         setLocation(900, 100);
@@ -150,6 +157,7 @@ public class MathQuizGame2 extends JFrame implements ActionListener {
             wrongCounterField.setVisible(true);
             questionLabel.setVisible(true);
             subTitle2Label.setVisible(true);
+            subTitleBetween1And2.setVisible(true);
             answerLabel.setVisible(true);
             answerField.setVisible(false);
             answerField.setEditable(true);
@@ -199,17 +207,17 @@ public class MathQuizGame2 extends JFrame implements ActionListener {
             int userAnswer = Integer.parseInt(answerField.getText());
             if (userAnswer == correctAnswer) {
                 remarksField.setForeground(Color.blue);
-                remarksField.setText(getCorrectResponse());
+                remarksField.setText(quizGame.getCorrectResponse());
                 answerField.setText("");
-                rightCounterField.setText(rightCounter + "");
+                rightCounterField.setText(quizGame.rightCounter + "");
                 questionLabel.setText(setQuestion(operator));
             } else {
                 remarksField.setForeground(Color.red);
-                remarksField.setText(getWrongResponse());
+                remarksField.setText(quizGame.getWrongResponse());
                 answerField.setText("");
-                wrongCounterField.setText(wrongCounter + "");
+                wrongCounterField.setText(quizGame.wrongCounter + "");
 
-                if (wrongCounter == LIMIT) {
+                if (quizGame.wrongCounter == LIMIT) {
                     getContentPane().setBackground(Color.black);
                     gameOverLabel.setText("GAME OVER");
                     gameOverLabel.setVisible(true);
@@ -219,6 +227,7 @@ public class MathQuizGame2 extends JFrame implements ActionListener {
                     wrongCounterField.setVisible(false);
                     questionLabel.setVisible(false);
                     subTitle2Label.setVisible(false);
+                    subTitleBetween1And2.setVisible(false);
                     answerLabel.setVisible(false);
                     answerField.setVisible(false);
                     answerField.setEditable(false);
@@ -234,82 +243,23 @@ public class MathQuizGame2 extends JFrame implements ActionListener {
         }
     }
 
-    public String getCorrectResponse() {
-        String response = "";
-        rightCounter++;
-
-        switch (random.nextInt(5)) {
-            case 0:
-                response = "Excellent";
-                break;
-            case 1:
-                response = "Very Good!";
-                break;
-            case 2:
-                response = "Correct!";
-                break;
-            case 3:
-                response = "That's Right!";
-                break;
-            case 4:
-                response = "Awesome!";
-                break;
-        }
-        return response;
-    }
-
-    public String getWrongResponse() {
-        String response = "";
-        wrongCounter++;
-        switch (random.nextInt(5)) {
-            case 0:
-                response = "Wrong!";
-                break;
-            case 1:
-                response = "Sorry, Please Try Again";
-                break;
-            case 2:
-                response = "Dont Give Up!";
-                break;
-            case 3:
-                response = "Try Once More!";
-                break;
-            case 4:
-                response = "Sorry, Incorrect!";
-                break;
-        }
-        return response;
-    }
-
-    public int getRandomNumber() {
-        return random.nextInt(10);
-
-    }
 
     public String setQuestion(String operator) {
-        digit1 = getRandomNumber();
-        digit2 = getRandomNumber();
+        digit1 = quizGame.getRandomNumber();
+        digit2 = quizGame.getRandomNumber();
 
         switch (operator) {
-            case "x":
-                correctAnswer = digit1 * digit2;
-                break;
-            case "+":
-                correctAnswer = digit1 + digit2;
-                break;
-            case "-":
-                correctAnswer = digit1 - digit2;
-                break;
-            case "/":
+            case "x" -> correctAnswer = digit1 * digit2;
+            case "+" -> correctAnswer = digit1 + digit2;
+            case "-" -> correctAnswer = digit1 - digit2;
+            case "/" -> {
                 if (digit1 == 0) {
                     digit1++;
-                    if (digit2 == 0)
-                        digit2++;
-                } else if (digit2 == 0)
+                }
+                if (digit2 == 0)
                     digit2++;
-
                 correctAnswer = digit1 / digit2;
-                break;
+            }
         }
         return "How Much is " + digit1 + operator + digit2 + " ? ";
     }
