@@ -23,7 +23,7 @@ public class SwingAppExample implements ActionListener {
 
     public SwingAppExample() {
         frame = new JFrame("Swing App Example");
-        frame.setPreferredSize(new Dimension(800, 440)); // Set the preferred size of the frame
+        frame.setPreferredSize(new Dimension(800, 600)); // Set the preferred size of the frame
         frame.setResizable(false);
         panel = new JPanel();
         panel.setLayout(new FlowLayout());
