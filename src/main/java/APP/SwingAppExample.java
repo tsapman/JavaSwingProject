@@ -17,6 +17,7 @@ public class SwingAppExample implements ActionListener {
     HyperLinkGeometry hyperLinkGeometry = new HyperLinkGeometry();
     private ArithmeticPanel arithmeticPanel;
     MathQuiz mathQuiz;
+    GeometryQuiz geometryQuiz;
 
     private String name;
     Theory theory = new Theory();
@@ -111,7 +112,9 @@ public class SwingAppExample implements ActionListener {
 
         geometryTheoryButton.addActionListener(e -> showPanel("Geometry - Theory",""));
 
-        geometryExercisesButton.addActionListener(e -> showPanel("Geometry - Exercises",""));
+        geometryExercisesButton.addActionListener(e ->
+                geometryQuiz = new GeometryQuiz()
+                );
 
         mathQuizButton.addActionListener(e -> mathQuiz = new MathQuiz());
 
