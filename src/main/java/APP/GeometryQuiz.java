@@ -96,22 +96,22 @@ class GeometryQuiz extends JFrame implements ActionListener {
         qpa[1][3] = "A=r^2";
         qpa[1][4] = "A=r";
 
-        qpa[2][0] = "How to read a character from the keyboard?";
-        qpa[2][1] = "char c=System.read()";
-        qpa[2][2] = "char c=System.in.read()";
-        qpa[2][3] = "char c=(char)System.read()";
-        qpa[2][4] = "char c=(char)System.in.read()";
+        qpa[2][0] = "The Pythagorean theorem is";
+        qpa[2][1] = "c=a^2+b^2";
+        qpa[2][2] = "c=a+b";
+        qpa[2][3] = "c=a";
+        qpa[2][4] = "c^2=a^2+b^2";
 
-        qpa[3][0] = "Which one would be an int?";
-        qpa[3][1] = "X";
-        qpa[3][2] = "2";
-        qpa[3][3] = "5.324";
-        qpa[3][4] = "Hello";
+        qpa[3][0] = "Triangle with base 3 cm,hypotenuse 5 cm.Find the missing side.";
+        qpa[3][1] = "4 cm";
+        qpa[3][2] = "6 cm";
+        qpa[3][3] = "7 cm";
+        qpa[3][4] = "0 cm";
 
-        qpa[4][0] = "How do you declare an integer variable x?";
-        qpa[4][1] = "int x";
-        qpa[4][2] = "x as Integer";
-        qpa[4][3] = "Int[] x";
+        qpa[4][0] = "sin A = 2 sin 30° cos 30°, then the value of A is";
+        qpa[4][1] = "45°";
+        qpa[4][2] = "30°";
+        qpa[4][3] = "60°";
         qpa[4][4] = "None of the above";
 
         qpa[5][0] = "How do you convert a string of number to a number?";
@@ -154,14 +154,14 @@ class GeometryQuiz extends JFrame implements ActionListener {
         qca[1][0] = "What is the Circle Area?";
         qca[1][1] = "A=πr^2";
 
-        qca[2][0] = "How to read a character from the keyboard?";
-        qca[2][1] = "char c=(char)System.in.read()";
+        qca[2][0] = "The Pythagorean theorem is";
+        qca[2][1] = "c^2=a^2+b^2";
 
-        qca[3][0] = "Which one would be an int";
-        qca[3][1] = "2";
+        qca[3][0] = "Triangle with base 3 cm,hypotenuse 5 cm.Find the missing side.";
+        qca[3][1] = "4 cm";
 
-        qca[4][0] = "How do you declare an integer variable x?";
-        qca[4][1] = "int x";
+        qca[4][0] = "sin A = 2 sin 30° cos 30°, then the value of A is";
+        qca[4][1] = "60°";
 
         qca[5][0] = "How do you convert a string of number to a number?";
         qca[5][1] = "int num=Integer.parseInt(str_num)";
