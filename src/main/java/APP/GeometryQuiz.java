@@ -24,7 +24,7 @@ class GeometryQuiz extends JFrame implements ActionListener {
     HashMap<Integer, String> map;
 
 
-
+    //Geometry Quiz constructor
     GeometryQuiz() {
         initializeData();
         setTitle("GeometryQuiz Program");
@@ -84,6 +84,7 @@ class GeometryQuiz extends JFrame implements ActionListener {
         }
     }
 
+    //Initialize Question and answer data
     public void initializeData() {
         //qpa stores pairs of question and its possible answers
         qpa = new String[10][5];
