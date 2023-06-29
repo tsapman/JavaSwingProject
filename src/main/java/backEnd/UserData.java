@@ -1,7 +1,5 @@
 package backEnd;
 
-import APP.SwingAppExample;
-
 public class UserData {
 
     public UserData() {

@@ -1,6 +1,8 @@
 package APP;
 
 
+import backEnd.NameOfTheUser;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -20,6 +22,8 @@ class GeometryQuiz extends JFrame implements ActionListener {
     String[][] qca;
     int qaid;
     HashMap<Integer, String> map;
+
+
 
     GeometryQuiz() {
         initializeData();
@@ -60,7 +64,7 @@ class GeometryQuiz extends JFrame implements ActionListener {
         cont.add(panel);
         setVisible(true);
         qaid = 0;
-        readqa(qaid);
+        readQa(qaid);
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -68,7 +72,7 @@ class GeometryQuiz extends JFrame implements ActionListener {
             if (qaid < 9) {
                 map.put(qaid, getSelection());
                 qaid++;
-                readqa(qaid);
+                readQa(qaid);
             }
             else {
                 map.put(qaid, getSelection());
@@ -114,35 +118,35 @@ class GeometryQuiz extends JFrame implements ActionListener {
         qpa[4][3] = "60°";
         qpa[4][4] = "None of the above";
 
-        qpa[5][0] = "How do you convert a string of number to a number?";
-        qpa[5][1] = "int num=Integer.parseInt(str_num)";
-        qpa[5][2] = "int num=str_num.toInteger()";
-        qpa[5][3] = "int num=(int)str_num";
-        qpa[5][4] = "int num=(Integer)str_num";
+        qpa[5][0] = "_____ angle is less than 90°";
+        qpa[5][1] = "obtuse angle";
+        qpa[5][2] = "right angle";
+        qpa[5][3] = "acute angle";
+        qpa[5][4] = "reflex angle";
 
-        qpa[6][0] = "What is the value of x? int x=3>>2";
-        qpa[6][1] = "1";
-        qpa[6][2] = "0";
-        qpa[6][3] = "3";
-        qpa[6][4] = "-3";
+        qpa[6][0] = "Which of the following two angles are classified as complementary?";
+        qpa[6][1] = "65° and 25°";
+        qpa[6][2] = "70° and 30°";
+        qpa[6][3] = "120° and 60°";
+        qpa[6][4] = "50° and 30°";
 
-        qpa[7][0] = "How to do exit a loop?";
-        qpa[7][1] = "Using exit";
-        qpa[7][2] = "Using break";
-        qpa[7][3] = "Using continue";
-        qpa[7][4] = "Using terminate";
+        qpa[7][0] = "Surface area of a hollow cylinder with, radius and height is measured by";
+        qpa[7][1] = "2πrh";
+        qpa[7][2] = "πrh";
+        qpa[7][3] = "2πr + h";
+        qpa[7][4] = "None of These";
 
-        qpa[8][0] = "What is the correct way to allocate one-dimensional array?";
-        qpa[8][1] = "int[size] arr=new int[]";
-        qpa[8][2] = "int arr[size]=new int[]";
-        qpa[8][3] = "int[size] arr=new int[size]";
-        qpa[8][4] = "int[] arr=new int[size]";
+        qpa[8][0] = "________ polygon has 10 sides.";
+        qpa[8][1] = "decagon";
+        qpa[8][2] = "hexagon";
+        qpa[8][3] = "quadrilateral";
+        qpa[8][4] = "None of These";
 
-        qpa[9][0] = "What is the correct way to allocate two-dimensional array?";
-        qpa[9][1] = "int[size][] arr=new int[][]";
-        qpa[9][2] = "int arr=new int[rows][cols]";
-        qpa[9][3] = "int arr[rows][]=new int[rows][cols]";
-        qpa[9][4] = "int[][] arr=new int[rows][cols]";
+        qpa[9][0] = "________ polygon has 8 sides.";
+        qpa[9][1] = "decagon";
+        qpa[9][2] = "hexagon";
+        qpa[9][3] = "octagon";
+        qpa[9][4] = "None of These";
 
 
         //qca stores pairs of question and its correct answer
@@ -163,20 +167,20 @@ class GeometryQuiz extends JFrame implements ActionListener {
         qca[4][0] = "sin A = 2 sin 30° cos 30°, then the value of A is";
         qca[4][1] = "60°";
 
-        qca[5][0] = "How do you convert a string of number to a number?";
-        qca[5][1] = "int num=Integer.parseInt(str_num)";
+        qca[5][0] = "_____ angle is less than 90°";
+        qca[5][1] = "acute angle";
 
-        qca[6][0] = "What is the value of x? int x=3>>2";
-        qca[6][1] = "0";
+        qca[6][0] = "Which of the following two angles are classified as complementary?";
+        qca[6][1] = "65° and 25°";
 
-        qca[7][0] = "How to do exit a loop?";
-        qca[7][1] = "Using break";
+        qca[7][0] = "Surface area of a hollow cylinder with, radius and height is measured by";
+        qca[7][1] = "2πrh";
 
-        qca[8][0] = "What is the correct way to allocate one-dimensional array?";
-        qca[8][1] = "int[] arr=new int[size]";
+        qca[8][0] = "________ polygon has 10 sides.";
+        qca[8][1] = "decagon";
 
-        qca[9][0] = "What is the correct way to allocate two-dimensional array?";
-        qca[9][1] = "int[][] arr=new int[rows][cols]";
+        qca[9][0] = "________ polygon has 8 sides.";
+        qca[9][1] = "octagon";
 
 
         //create a map object to store pairs of question and selected answer
@@ -195,7 +199,7 @@ class GeometryQuiz extends JFrame implements ActionListener {
         return (selectedChoice);
     }
 
-    public void readqa(int qid) {
+    public void readQa(int qid) {
         lblmess.setText("  " + qpa[qid][0]);
         choice1.setText(qpa[qid][1]);
         choice2.setText(qpa[qid][2]);
@@ -207,7 +211,7 @@ class GeometryQuiz extends JFrame implements ActionListener {
     public void reset() {
         qaid = 0;
         map.clear();
-        readqa(qaid);
+        readQa(qaid);
         btnext.setText("Next");
     }
 
@@ -261,10 +265,14 @@ class GeometryQuiz extends JFrame implements ActionListener {
                     }
                 }
                 //show number of correct answers
-                int numc = calCorrectAnswer();
+                float numc = calCorrectAnswer();
+                float result = (numc/10) * 100;
+                NameOfTheUser  nameOfTheUser= NameOfTheUser.getInstance();
+
+                String re =nameOfTheUser.getUserName()+" your score is: " + result +"%";
                 g.setColor(Color.BLUE);
                 g.setFont(new Font("Arial", Font.BOLD, 14));
-                g.drawString("Number of correct answers:" + numc, 300, 500);
+                g.drawString(re, 300, 500);
             }
         }
     }

@@ -1,5 +1,6 @@
 package APP;
 
+import backEnd.NameOfTheUser;
 import backEnd.Theory;
 
 import javax.swing.*;
@@ -7,7 +8,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class SwingAppExample implements ActionListener {
+// Application class includes main method
+public class Application implements ActionListener {
+
     private JFrame frame;
     private JPanel panel;
     private JLabel nameLabel;
@@ -22,13 +25,17 @@ public class SwingAppExample implements ActionListener {
     private String name;
     Theory theory = new Theory();
 
-    public SwingAppExample() {
+    //Constructor for the App class
+    public Application() {
+        NameOfTheUser nameOfTheUser = NameOfTheUser.getInstance();
         frame = new JFrame("Swing App Example");
         frame.setPreferredSize(new Dimension(800, 600)); // Set the preferred size of the frame
         frame.setResizable(false);
         panel = new JPanel();
         panel.setLayout(new FlowLayout());
         JLabel titleOfApp = new JLabel("Welcome to Become a Math Legend App!!");
+
+        //Asks the user to input his/her name
         nameLabel = new JLabel("Enter your name:");
         nameLabel.setFont(new Font("Arial", Font.BOLD, 20)); // Increase the font size and style
         nameField = new JTextField(10);
@@ -49,11 +56,17 @@ public class SwingAppExample implements ActionListener {
 
         submitButton.addActionListener(e -> {
             name = nameField.getText();
+
+            //initializing the username with the Singleton pattern
+            nameOfTheUser.setUserName(name);
             showChoicesPanel();
         });
 
         nameField.addActionListener(e -> {
             name = nameField.getText();
+
+            //initializing the username with the Singleton pattern
+            nameOfTheUser.setUserName(name);
             showChoicesPanel();
         });
 
@@ -63,13 +76,16 @@ public class SwingAppExample implements ActionListener {
         frame.setVisible(true);
     }
 
+
+    //method to show the choices to the user in the main menu
     private void showChoicesPanel() {
         panel.removeAll();
         panel.revalidate();
         panel.repaint();
         panel.setBackground(Color.white);
+        NameOfTheUser  nameOfTheUser= NameOfTheUser.getInstance();
 
-        JLabel greetingLabel = new JLabel("Hello, " + name + "!");
+        JLabel greetingLabel = new JLabel("Hello, " + nameOfTheUser.getUserName() + "!");
         greetingLabel.setFont(new Font("Arial", Font.BOLD, 24));
         JLabel choicesLabel = new JLabel("Select an option:");
         JPanel choicesPanel = new JPanel();
@@ -94,8 +110,11 @@ public class SwingAppExample implements ActionListener {
         panel.add(Box.createVerticalStrut(10));
         panel.add(choicesPanel);
 
-        algebraTheoryButton.addActionListener(e -> showPanel("Algebra - Theory", theory.AlgebraTheory()));
+        //First choice cans be accessed by clicking on the button
+        algebraTheoryButton.addActionListener(e ->
+                showPanel("Algebra - Theory", theory.AlgebraTheory()));
 
+        //Second choice cans be accessed by clicking on the button
         algebraExercisesButton.addActionListener(e -> {
             arithmeticPanel = new ArithmeticPanel();
             panel.removeAll();
@@ -110,13 +129,18 @@ public class SwingAppExample implements ActionListener {
             backButton.addActionListener(e1 -> showChoicesPanel());
         });
 
-        geometryTheoryButton.addActionListener(e -> showPanel("Geometry - Theory",""));
+        //Third choice can be accessed by clicking on the button
+        geometryTheoryButton.addActionListener(e ->
+                showPanel("Geometry - Theory",""));
 
+        //Fourth choice can be accessed by clicking on the button
         geometryExercisesButton.addActionListener(e ->
                 geometryQuiz = new GeometryQuiz()
                 );
 
-        mathQuizButton.addActionListener(e -> mathQuiz = new MathQuiz());
+        //Fifth choice can be accessed by clicking on the button
+        mathQuizButton.addActionListener(e ->
+                mathQuiz = new MathQuiz());
 
         frame.pack();
         frame.setMinimumSize(new Dimension(frame.getWidth(), frame.getHeight()));
@@ -131,7 +155,9 @@ public class SwingAppExample implements ActionListener {
         JLabel choiceLabel = new JLabel(choice);
         choiceLabel.setFont(new Font("Arial", Font.BOLD, 24));
         JLabel additionalLabel = new JLabel(additionalString);
-        additionalLabel.setFont(new Font("Arial", Font.PLAIN, 16)); // Set the font for the additionalLabel
+
+        // Set the font for the additionalLabel
+        additionalLabel.setFont(new Font("Arial", Font.PLAIN, 16));
         JLabel algebraLink = hyperlinkAlgebra.algebraLink();
         JLabel geometryLink = hyperLinkGeometry.geometryLink();
         JButton backButton = new JButton("Back");
@@ -158,7 +184,7 @@ public class SwingAppExample implements ActionListener {
 
     public static void main(String[] args) {
 
-        SwingAppExample app = new SwingAppExample();
+        Application app = new Application();
     }
 
     @Override
