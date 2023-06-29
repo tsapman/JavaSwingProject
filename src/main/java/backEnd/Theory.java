@@ -1,5 +1,7 @@
 package backEnd;
 
+
+//data that we pass as a string in the theory tabs of the app the data have a html format
 public class Theory {
     public String AlgebraTheory(){
         String theory = "<html>\n" +
@@ -34,6 +36,37 @@ public class Theory {
                 "<p>3x = 24</p>"+
                 "<p>x = 8</p>"+
                 "<p>Therefore, the value of x = 8</p>"+
+                "</body>" +
+                "</html>";
+
+        return theory;
+    }
+
+    public String geometryTheory(){
+        String theory = "<html>\n" +
+                "<head>" +
+                "    <title>Geometry</title>" +
+                "</head>" +
+                "<body><h2 color=\"red\">What is Geometry?</h2>"+
+                "<p>Geometry is derived from Ancient Greek words – 'Geo' means 'Earth' and 'metron' means 'measurement'</p>"+
+                "<p>" +
+                " Geometry is, along with arithmetic, one of the oldest branches of mathematics." +
+                "</p>" +
+                "<p>" +
+                "  In Euclidean geometry, there are two-dimensional shapes and three-dimensional shapes." +
+                "</p>" +
+                "<p> In a plane geometry, 2d shapes such as triangles, squares, rectangles, circles are also called flat shapes.</p>"+
+                "<p>" +
+                "\n\n" +
+                "</p>"+
+                "<p><strong>Examples:</strong></p>"+
+                "<p>" +
+                "\n" +
+                "</p>" +
+                "<p>A triangle is a 3 sided shape, and the sum of its 3 interior angles is 180˚</p>"+
+                "<p>A square, rectangle or quadrilateral are 4 sided shapes, and the sum of their 4 interior angles is 360˚</p>"+
+                "<p>Other polygons like the pentagon, hexagon, heptagon, octagon have 5, 6, 7, 8 sides respectively and varying angles.</p>"+
+                "<p>A circle is the set of all points equal in distance from a center point.</p>"+
                 "</body>" +
                 "</html>";
 

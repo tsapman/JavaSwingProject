@@ -131,7 +131,7 @@ public class Application implements ActionListener {
 
         //Third choice can be accessed by clicking on the button
         geometryTheoryButton.addActionListener(e ->
-                showPanel("Geometry - Theory",""));
+                showPanel("Geometry - Theory",theory.geometryTheory()));
 
         //Fourth choice can be accessed by clicking on the button
         geometryExercisesButton.addActionListener(e ->
