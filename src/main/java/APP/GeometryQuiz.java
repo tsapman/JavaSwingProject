@@ -8,7 +8,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.util.*;
 
-
+//Geometry Quiz tab
 class GeometryQuiz extends JFrame implements ActionListener {
     JPanel panel;
     JRadioButton choice1;
