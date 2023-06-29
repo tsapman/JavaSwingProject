@@ -16,11 +16,11 @@ class GeometryQuiz extends JFrame implements ActionListener {
     JRadioButton choice3;
     JRadioButton choice4;
     ButtonGroup bg;
-    JLabel lblmess;
-    JButton btnext;
+    JLabel labelMess;
+    JButton buttonNext;
     String[][] qpa;
     String[][] qca;
-    int qaid;
+    int qaId;
     HashMap<Integer, String> map;
 
 
@@ -44,42 +44,42 @@ class GeometryQuiz extends JFrame implements ActionListener {
         bg.add(choice2);
         bg.add(choice3);
         bg.add(choice4);
-        lblmess = new JLabel("Choose a correct answer");
-        lblmess.setForeground(Color.BLUE);
-        lblmess.setFont(new Font("Arial", Font.BOLD, 11));
-        btnext = new JButton("Next");
-        btnext.setForeground(Color.BLUE);
-        btnext.addActionListener(this);
+        labelMess = new JLabel("Choose a correct answer");
+        labelMess.setForeground(Color.BLUE);
+        labelMess.setFont(new Font("Arial", Font.BOLD, 11));
+        buttonNext = new JButton("Next");
+        buttonNext.setForeground(Color.BLUE);
+        buttonNext.addActionListener(this);
         panel = new JPanel();
         panel.setBackground(Color.LIGHT_GRAY);
         panel.setLocation(10, 10);
         panel.setSize(400, 300);
         panel.setLayout(new GridLayout(6, 2));
-        panel.add(lblmess);
+        panel.add(labelMess);
         panel.add(choice1);
         panel.add(choice2);
         panel.add(choice3);
         panel.add(choice4);
-        panel.add(btnext);
+        panel.add(buttonNext);
         cont.add(panel);
         setVisible(true);
-        qaid = 0;
-        readQa(qaid);
+        qaId = 0;
+        readQa(qaId);
     }
 
     public void actionPerformed(ActionEvent e) {
-        if (btnext.getText().equals("Next")) {
-            if (qaid < 9) {
-                map.put(qaid, getSelection());
-                qaid++;
-                readQa(qaid);
+        if (buttonNext.getText().equals("Next")) {
+            if (qaId < 9) {
+                map.put(qaId, getSelection());
+                qaId++;
+                readQa(qaId);
             }
             else {
-                map.put(qaid, getSelection());
-                btnext.setText("Show answers");
+                map.put(qaId, getSelection());
+                buttonNext.setText("Show answers");
             }
         }
-        else if (btnext.getText().equals("Show answers")) {
+        else if (buttonNext.getText().equals("Show answers")) {
             new Report();
         }
     }
@@ -200,7 +200,7 @@ class GeometryQuiz extends JFrame implements ActionListener {
     }
 
     public void readQa(int qid) {
-        lblmess.setText("  " + qpa[qid][0]);
+        labelMess.setText("  " + qpa[qid][0]);
         choice1.setText(qpa[qid][1]);
         choice2.setText(qpa[qid][2]);
         choice3.setText(qpa[qid][3]);
@@ -209,16 +209,16 @@ class GeometryQuiz extends JFrame implements ActionListener {
     }
 
     public void reset() {
-        qaid = 0;
+        qaId = 0;
         map.clear();
-        readQa(qaid);
-        btnext.setText("Next");
+        readQa(qaId);
+        buttonNext.setText("Next");
     }
 
     public int calCorrectAnswer() {
-        int qnum = 10;
+        int qNum = 10;
         int count = 0;
-        for (int qid = 0; qid < qnum; qid++) {
+        for (int qid = 0; qid < qNum; qid++) {
             if (qca[qid][1].equals(map.get(qid))) {
                 count++;
             }
@@ -244,10 +244,10 @@ class GeometryQuiz extends JFrame implements ActionListener {
 
         class Draw extends Canvas {
             public void paint(Graphics g) {
-                int qnum = 10;
+                int qNum = 10;
                 int x = 10;
                 int y = 20;
-                for (int i = 0; i < qnum; i++) {
+                for (int i = 0; i < qNum; i++) {
                     //print the 1st column
                     g.setColor(Color.BLUE);
                     g.setFont(new Font("Arial", Font.BOLD, 12));
@@ -265,8 +265,8 @@ class GeometryQuiz extends JFrame implements ActionListener {
                     }
                 }
                 //show number of correct answers
-                float numc = calCorrectAnswer();
-                float result = (numc/10) * 100;
+                float num = calCorrectAnswer();
+                float result = (num /10) * 100;
                 NameOfTheUser  nameOfTheUser= NameOfTheUser.getInstance();
 
                 String re =nameOfTheUser.getUserName()+" your score is: " + result +"%";

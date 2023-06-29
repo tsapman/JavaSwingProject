@@ -1,5 +1,6 @@
 package APP;
 
+import backEnd.NameOfTheUser;
 import backEnd.QuizGame;
 
 import java.awt.Color;
@@ -15,6 +16,7 @@ import javax.swing.JTextField;
 
 public class MathQuiz extends JFrame implements ActionListener {
     QuizGame quizGame = new QuizGame();
+    NameOfTheUser nameOfTheUser= NameOfTheUser.getInstance();
 
     JLabel titleLabel = new JLabel("Math Quiz");
     JLabel subTitle1Label = new JLabel("Choose Operation to play with ->(x,+,-,/)");
@@ -24,7 +26,7 @@ public class MathQuiz extends JFrame implements ActionListener {
     JLabel answerLabel = new JLabel("Answer: ");
     JLabel gameOverLabel = new JLabel();
 
-    JButton playButton = new JButton("PLAY");
+    JButton playButton = new JButton("Welcome "+nameOfTheUser.getUserName() +"-> PLAY");
     JButton mulButton = new JButton("x");
     JButton addButton = new JButton("+");
     JButton subButton = new JButton("-");
@@ -37,9 +39,9 @@ public class MathQuiz extends JFrame implements ActionListener {
     JTextField rightCounterField = new JTextField(3);
     JTextField wrongCounterField = new JTextField(3);
 
-    Font titleFont = new Font("Tahoma", Font.BOLD, 58);
-    Font questionFont = new Font("Tahoma", Font.BOLD, 25);
-    Font answerFont = new Font("Tahoma", Font.BOLD, 38);
+    Font titleFont = new Font("Arial", Font.BOLD, 58);
+    Font questionFont = new Font("Arial", Font.BOLD, 25);
+    Font answerFont = new Font("Arial", Font.BOLD, 38);
 
 
     int digit1;
@@ -121,10 +123,10 @@ public class MathQuiz extends JFrame implements ActionListener {
         addButton.setFont(titleFont);
         subButton.setFont(titleFont);
         divButton.setFont(titleFont);
-        playButton.setFont(new Font("Tahoma", Font.BOLD, 100));
-        restartButton.setFont(new Font("Tahoma", Font.BOLD, 60));
-        exitButton.setFont(new Font("Tahoma", Font.BOLD, 60));
-        gameOverLabel.setFont(new Font("Tahoma", Font.BOLD, 95));
+        playButton.setFont(new Font("Arial", Font.BOLD, 35));
+        restartButton.setFont(new Font("Arial", Font.BOLD, 60));
+        exitButton.setFont(new Font("Arial", Font.BOLD, 60));
+        gameOverLabel.setFont(new Font("Arial", Font.BOLD, 95));
 
         remarksField.setHorizontalAlignment(JTextField.CENTER);
         wrongCounterField.setHorizontalAlignment(JTextField.RIGHT);
