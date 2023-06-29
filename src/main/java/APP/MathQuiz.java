@@ -14,6 +14,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+//Creating frame for the MathQuiz
 public class MathQuiz extends JFrame implements ActionListener {
     QuizGame quizGame = new QuizGame();
     NameOfTheUser nameOfTheUser= NameOfTheUser.getInstance();
@@ -243,7 +244,7 @@ public class MathQuiz extends JFrame implements ActionListener {
         }
     }
 
-
+    //Creating +,*,/ and - functionalities
     public String setQuestion(String operator) {
         digit1 = quizGame.getRandomNumber();
         digit2 = quizGame.getRandomNumber();
