@@ -92,12 +92,12 @@ class GeometryQuiz extends JFrame implements ActionListener {
         qpa[0][0] = "Which is the sin(45)?";
         qpa[0][1] = "1";
         qpa[0][2] = "0";
-        qpa[0][3] = "1/√2";
+        qpa[0][3] = "1/\u221A2";
         qpa[0][4] = "0.5";
 
         qpa[1][0] = "What is the Circle Area?";
-        qpa[1][1] = "A=πr^2";
-        qpa[1][2] = "A=πr";
+        qpa[1][1] = "A=pr^2";
+        qpa[1][2] = "A=pr";
         qpa[1][3] = "A=r^2";
         qpa[1][4] = "A=r";
 
@@ -114,9 +114,9 @@ class GeometryQuiz extends JFrame implements ActionListener {
         qpa[3][4] = "0 cm";
 
         qpa[4][0] = "sin A = 2 sin 30° cos 30°, then the value of A is";
-        qpa[4][1] = "45°";
-        qpa[4][2] = "30°";
-        qpa[4][3] = "60°";
+        qpa[4][1] = "45\u00B0";
+        qpa[4][2] = "30\u00B0";
+        qpa[4][3] = "60\u00B0";
         qpa[4][4] = "None of the above";
 
         qpa[5][0] = "_____ angle is less than 90°";
@@ -126,15 +126,15 @@ class GeometryQuiz extends JFrame implements ActionListener {
         qpa[5][4] = "reflex angle";
 
         qpa[6][0] = "Which of the following two angles are classified as complementary?";
-        qpa[6][1] = "65° and 25°";
-        qpa[6][2] = "70° and 30°";
-        qpa[6][3] = "120° and 60°";
-        qpa[6][4] = "50° and 30°";
+        qpa[6][1] = "65\u00B0 and 25\u00B0";
+        qpa[6][2] = "70\u00B0 and 30\u00B0";
+        qpa[6][3] = "120\u00B0 and 60\u00B0";
+        qpa[6][4] = "50\u00B0 and 30\u00B0";
 
         qpa[7][0] = "Surface area of a hollow cylinder with, radius and height is measured by";
-        qpa[7][1] = "2πrh";
-        qpa[7][2] = "πrh";
-        qpa[7][3] = "2πr + h";
+        qpa[7][1] = "2prh";
+        qpa[7][2] = "prh";
+        qpa[7][3] = "2pr + h";
         qpa[7][4] = "None of These";
 
         qpa[8][0] = "________ polygon has 10 sides.";
@@ -154,10 +154,10 @@ class GeometryQuiz extends JFrame implements ActionListener {
         qca = new String[10][2];
 
         qca[0][0] = "Which is the sin(45)?";
-        qca[0][1] = "1/√2";
+        qca[0][1] = "1/\u221A2";
 
         qca[1][0] = "What is the Circle Area?";
-        qca[1][1] = "A=πr^2";
+        qca[1][1] = "A=pr^2";
 
         qca[2][0] = "The Pythagorean theorem is";
         qca[2][1] = "c^2=a^2+b^2";
@@ -166,16 +166,16 @@ class GeometryQuiz extends JFrame implements ActionListener {
         qca[3][1] = "4 cm";
 
         qca[4][0] = "sin A = 2 sin 30° cos 30°, then the value of A is";
-        qca[4][1] = "60°";
+        qca[4][1] = "60\u00B0";
 
         qca[5][0] = "_____ angle is less than 90°";
         qca[5][1] = "acute angle";
 
         qca[6][0] = "Which of the following two angles are classified as complementary?";
-        qca[6][1] = "65° and 25°";
+        qca[6][1] = "65\u00B0 and 25\u00B0";
 
         qca[7][0] = "Surface area of a hollow cylinder with, radius and height is measured by";
-        qca[7][1] = "2πrh";
+        qca[7][1] = "2prh";
 
         qca[8][0] = "________ polygon has 10 sides.";
         qca[8][1] = "decagon";
