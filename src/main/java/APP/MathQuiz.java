@@ -3,16 +3,10 @@ package APP;
 import backEnd.NameOfTheUser;
 import backEnd.QuizGame;
 
-import java.awt.Color;
-import java.awt.FlowLayout;
-import java.awt.Font;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
 
 //Creating frame for the MathQuiz
 public class MathQuiz extends JFrame implements ActionListener {
