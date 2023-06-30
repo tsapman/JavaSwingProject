@@ -1,12 +1,17 @@
 package APP;
 
 
+import backEnd.MathOperations;
 import backEnd.NameOfTheUser;
 
-import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-import java.util.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.util.Enumeration;
+import java.util.HashMap;
 
 //Geometry Quiz tab
 class GeometryQuiz extends JFrame implements ActionListener {
@@ -22,6 +27,7 @@ class GeometryQuiz extends JFrame implements ActionListener {
     String[][] qca;
     int qaId;
     HashMap<Integer, String> map;
+    MathOperations mathOperations = new MathOperations();
 
 
     //Geometry Quiz constructor
@@ -268,7 +274,7 @@ class GeometryQuiz extends JFrame implements ActionListener {
                 }
                 //show number of correct answers
                 float num = calCorrectAnswer();
-                float result = (num /10) * 100;
+                float result = mathOperations.scoreInQuiz(num);
                 NameOfTheUser  nameOfTheUser= NameOfTheUser.getInstance();
 
                 String re =nameOfTheUser.getUserName()+" your score is: " + result +"%";

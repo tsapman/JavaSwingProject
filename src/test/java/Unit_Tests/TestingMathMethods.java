@@ -40,5 +40,11 @@ public class TestingMathMethods {
         assertEquals(2,mathOperations.divideTwoNumbers(-300,-150), e);
     }
 
+    //unit test for checking Score result
+    @Test
+    public void testCheckResultOfQuiz(){
+
+        assertEquals(40,mathOperations.scoreInQuiz(4), e);
+    }
 
 }

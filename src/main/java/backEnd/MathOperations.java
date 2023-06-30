@@ -25,4 +25,10 @@ public class MathOperations {
         result = operand1 / operand2;
         return  result;
     }
+
+    public float scoreInQuiz(float num) {
+        float result;
+        result = (num /10) * 100;
+        return result;
+    }
 }
