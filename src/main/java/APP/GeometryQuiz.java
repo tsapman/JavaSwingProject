@@ -51,7 +51,7 @@ class GeometryQuiz extends JFrame implements ActionListener {
         buttonNext.setForeground(Color.BLUE);
         buttonNext.addActionListener(this);
         panel = new JPanel();
-        panel.setBackground(Color.LIGHT_GRAY);
+        panel.setBackground(Color.ORANGE);
         panel.setLocation(10, 10);
         panel.setSize(400, 300);
         panel.setLayout(new GridLayout(6, 2));
@@ -61,6 +61,7 @@ class GeometryQuiz extends JFrame implements ActionListener {
         panel.add(choice3);
         panel.add(choice4);
         panel.add(buttonNext);
+        panel.setBackground(Color.ORANGE);
         cont.add(panel);
         setVisible(true);
         qaId = 0;
@@ -113,13 +114,13 @@ class GeometryQuiz extends JFrame implements ActionListener {
         qpa[3][3] = "7 cm";
         qpa[3][4] = "0 cm";
 
-        qpa[4][0] = "sin A = 2 sin 30° cos 30°, then the value of A is";
+        qpa[4][0] = "sin A = 2 sin 30\u00B0 cos 30\u00B0, then the value of A is";
         qpa[4][1] = "45\u00B0";
         qpa[4][2] = "30\u00B0";
         qpa[4][3] = "60\u00B0";
         qpa[4][4] = "None of the above";
 
-        qpa[5][0] = "_____ angle is less than 90°";
+        qpa[5][0] = "_____ angle is less than 90\u00B0";
         qpa[5][1] = "obtuse angle";
         qpa[5][2] = "right angle";
         qpa[5][3] = "acute angle";
@@ -165,10 +166,10 @@ class GeometryQuiz extends JFrame implements ActionListener {
         qca[3][0] = "Triangle with base 3 cm,hypotenuse 5 cm.Find the missing side.";
         qca[3][1] = "4 cm";
 
-        qca[4][0] = "sin A = 2 sin 30° cos 30°, then the value of A is";
+        qca[4][0] = "sin A = 2 sin 30\u00B0 cos 30\u00B0, then the value of A is";
         qca[4][1] = "60\u00B0";
 
-        qca[5][0] = "_____ angle is less than 90°";
+        qca[5][0] = "_____ angle is less than 90\u00B0";
         qca[5][1] = "acute angle";
 
         qca[6][0] = "Which of the following two angles are classified as complementary?";
@@ -231,7 +232,7 @@ class GeometryQuiz extends JFrame implements ActionListener {
         Report() {
             setTitle("Answers");
             setSize(850, 550);
-            setBackground(Color.WHITE);
+            setBackground(Color.ORANGE);
             addWindowListener(new WindowAdapter() {
                 public void windowClosing(WindowEvent e) {
                     dispose();

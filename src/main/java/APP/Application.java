@@ -45,7 +45,7 @@ public class Application implements ActionListener {
         Font titleFont = new Font("Arial",Font.BOLD,34);
         nameField.setFont(answerFont);
         titleOfApp.setFont(titleFont);
-        titleOfApp.setForeground(Color.RED);
+        titleOfApp.setForeground(Color.BLUE);
 
         panel.setBackground(Color.ORANGE);
         panel.add(titleOfApp);
@@ -96,19 +96,24 @@ public class Application implements ActionListener {
         JButton geometryTheoryButton = new JButton("Geometry - Theory");
         JButton geometryExercisesButton = new JButton("Geometry - Exercises");
         JButton mathQuizButton = new JButton("Math Quiz");
+        JButton aboutUsButton = new JButton("About Us");
 
         choicesPanel.add(algebraTheoryButton);
         choicesPanel.add(algebraExercisesButton);
         choicesPanel.add(geometryTheoryButton);
         choicesPanel.add(geometryExercisesButton);
         choicesPanel.add(mathQuizButton);
+        choicesPanel.add(aboutUsButton);
 
+        panel.setBackground(Color.ORANGE);
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         panel.add(greetingLabel);
         panel.add(Box.createVerticalStrut(20));
         panel.add(choicesLabel);
         panel.add(Box.createVerticalStrut(10));
         panel.add(choicesPanel);
+
+
 
         //First choice cans be accessed by clicking on the button
         algebraTheoryButton.addActionListener(e ->
@@ -173,6 +178,7 @@ public class Application implements ActionListener {
         if (choice.equals("Geometry - Theory")) {
             panel.add(geometryLink);
         }
+        panel.setBackground(Color.ORANGE);
         panel.add(Box.createVerticalStrut(20));
         panel.add(backButton);
 
