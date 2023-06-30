@@ -1,5 +1,7 @@
 package APP;
 
+import backEnd.MathOperations;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -15,6 +17,7 @@ public class ArithmeticPanel extends JPanel {
     private JButton divideButton;
     private JPanel inputPanel;
     private JPanel buttonPanel;
+    MathOperations mathOperations = new MathOperations();
 
 
     public ArithmeticPanel() {
@@ -81,16 +84,16 @@ public class ArithmeticPanel extends JPanel {
 
             switch (operation) {
                 case ADD:
-                    result = operand1 + operand2;
+                    result = mathOperations.addTwoNumbers(operand1,operand2);
                     break;
                 case SUBTRACT:
-                    result = operand1 - operand2;
+                    result = mathOperations.subTwoNumbers(operand1,operand2);
                     break;
                 case MULTIPLY:
-                    result = operand1 * operand2;
+                    result = mathOperations.multiTwoNumbers(operand1,operand2);
                     break;
                 case DIVIDE:
-                    result = operand1 / operand2;
+                    result = mathOperations.divideTwoNumbers(operand1,operand2);
                     break;
             }
 
