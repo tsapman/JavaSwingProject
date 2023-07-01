@@ -56,6 +56,45 @@ public class SmokeTests {
 
     }
 
+    @Test
+    public void checkTheContentOfTheMenuOfChoicesPart1(){
+        Application application = GuiActionRunner.execute(Application::new);
+        frame = new FrameFixture(application.frame);
+        frame.show();
+
+        // Check the presence and behavior of a button
+        JButtonFixture buttonFixture = frame.button(new GenericTypeMatcher<>(JButton.class) {
+            protected boolean isMatching(JButton button) {
+
+                // the text of  button in starting page
+                return "Enter".equals(button.getText());
+
+            }
+        });
+
+        buttonFixture.click();
+
+        JButtonFixture buttonAlgebraTheory = frame.button(new GenericTypeMatcher<>(JButton.class) {
+            protected boolean isMatching(JButton button) {
+
+                // the text of  button in Choice Menu
+                return "Algebra - Theory".equals(button.getText());
+
+            }
+        });
+        assertTrue("the Algebra Theory Button is not displayed",buttonAlgebraTheory.isEnabled());
+
+        JButtonFixture buttonGeometryTheory = frame.button(new GenericTypeMatcher<>(JButton.class) {
+            protected boolean isMatching(JButton button) {
+
+                // the text of  button in Choice Menu
+                return "Geometry - Theory".equals(button.getText());
+
+            }
+        });
+        assertTrue("the Geometry Theory Button is not displayed",buttonGeometryTheory.isEnabled());
+    }
+
     // Clean up resources
     @After
     public void cleanFrameAfterExecution() {
