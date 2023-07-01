@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 // Application class includes main method
 public class Application implements ActionListener {
 
-    private JFrame frame;
+    public JFrame frame;
     private JPanel panel;
     private JLabel nameLabel;
     private JTextField nameField;
@@ -47,6 +47,7 @@ public class Application implements ActionListener {
         titleOfApp.setFont(titleFont);
         titleOfApp.setForeground(Color.BLUE);
 
+        //setting the components of the starting page of the app
         panel.setBackground(Color.ORANGE);
         panel.add(titleOfApp);
         panel.add(Box.createVerticalStrut(200));
@@ -151,6 +152,7 @@ public class Application implements ActionListener {
         frame.setMinimumSize(new Dimension(frame.getWidth(), frame.getHeight()));
     }
 
+    //Method that facilitates the creation of the Algebra Theory and Geometry Theory Tabs
     private void showPanel(String choice, String additionalString) {
         panel.removeAll();
         panel.revalidate();
@@ -188,6 +190,7 @@ public class Application implements ActionListener {
         frame.setMinimumSize(new Dimension(frame.getWidth(), frame.getHeight()));
     }
 
+    //Main method of the project
     public static void main(String[] args) {
 
         Application app = new Application();
