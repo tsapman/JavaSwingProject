@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Smoke_Tests.SmokeTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2023-07-01T18:28:25" hostname="DESKTOP-7BOF7NR" time="5.115">
+  <properties/>
+  <testcase name="checkTheContentOfTheMenuOfChoicesPart1" classname="Smoke_Tests.SmokeTests" time="2.482"/>
+  <testcase name="checkTheContentOfTheMenuOfChoicesPart2" classname="Smoke_Tests.SmokeTests" time="0.972"/>
+  <testcase name="checkButtonInStartingFrame" classname="Smoke_Tests.SmokeTests" time="0.949"/>
+  <testcase name="testStartOfTheApp" classname="Smoke_Tests.SmokeTests" time="0.71"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

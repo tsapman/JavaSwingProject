@@ -22,6 +22,12 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
 }
 
+task testReport(type: Test) {
+    reports {
+        html.destination = file("$buildDir/reports/tests")
+    }
+}
+
 test {
     useJUnitPlatform()
 

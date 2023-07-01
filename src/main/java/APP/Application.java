@@ -132,19 +132,28 @@ public class Application implements ActionListener {
             panel.add(Box.createVerticalStrut(20));
             panel.add(backButton);
 
+            //Using Lambda function to facilitate the click at the Enter button
             backButton.addActionListener(e1 -> showChoicesPanel());
         });
 
-        //Third choice can be accessed by clicking on the button
+        /*
+        Using Lambda function to facilitate the click
+        Third choice can be accessed by clicking on the button
+        */
         geometryTheoryButton.addActionListener(e ->
                 showPanel("Geometry - Theory",theory.geometryTheory()));
 
-        //Fourth choice can be accessed by clicking on the button
+        /*
+        Using Lambda function to facilitate the click
+        Fourth choice can be accessed by clicking on the button
+        */
         geometryExercisesButton.addActionListener(e ->
                 geometryQuiz = new GeometryQuiz()
                 );
-
-        //Fifth choice can be accessed by clicking on the button
+        /*
+        Using Lambda function to facilitate the click
+        Fifth choice can be accessed by clicking on the button
+        */
         mathQuizButton.addActionListener(e ->
                 mathQuiz = new MathQuiz());
 

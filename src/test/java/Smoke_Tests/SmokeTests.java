@@ -166,6 +166,49 @@ public class SmokeTests {
         assertTrue("the About Us Button is not displayed",buttonAboutUs.isEnabled());
     }
 
+    //Check if the user can enter at the Algebra Theory tab
+    @Test
+    public void checkIfTheUserCanEnterAtTheAlgebraTheoryTab(){
+        Application application = GuiActionRunner.execute(Application::new);
+        frame = new FrameFixture(application.frame);
+        frame.show();
+
+        // Check the presence and behavior of a button
+        JButtonFixture buttonFixture = frame.button(new GenericTypeMatcher<>(JButton.class) {
+            protected boolean isMatching(JButton button) {
+
+                // the text of  button in starting page
+                return "Enter".equals(button.getText());
+
+            }
+        });
+
+        buttonFixture.click();
+
+        JButtonFixture buttonAlgebraTheory = frame.button(new GenericTypeMatcher<>(JButton.class) {
+            protected boolean isMatching(JButton button) {
+
+                // the text of  button in Choice Menu
+                return "Algebra - Theory".equals(button.getText());
+
+            }
+        });
+
+        buttonAlgebraTheory.click();
+
+        JButtonFixture buttonBackAlgebraTab = frame.button(new GenericTypeMatcher<>(JButton.class) {
+            protected boolean isMatching(JButton button) {
+
+                // the text of button in Choice Menu
+                return "Back".equals(button.getText());
+
+            }
+        });
+
+        //If the Jbutton Back is displayed then we are on the Algebra Theory tab
+        assertTrue("The Algebra Theory section is NOT displayed properly",buttonBackAlgebraTab.isEnabled());
+    }
+
 
     // Clean up resources
     @After
