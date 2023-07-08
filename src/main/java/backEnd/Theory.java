@@ -13,7 +13,7 @@ public class Theory {
                 "    Algebra is the part of mathematics that helps represent problems or situations in the form of mathematical expressions" +
                 "</p>" +
                 "<p>" +
-                "    In algebra, we use numbers like 2, −7, 0.068 etc., which have a definite or fixed value." +
+                "    In algebra, we use numbers like 2, 7777, 0.068 etc., which have a definite or fixed value." +
                 "</p>" +
                 "    In algebra we use variables like x, y, and z along with numbers" +
                 "<p>" +
@@ -48,7 +48,7 @@ public class Theory {
                 "    <title>Geometry</title>" +
                 "</head>" +
                 "<body><h2 color=\"red\">What is Geometry?</h2>"+
-                "<p>Geometry is derived from Ancient Greek words – 'Geo' means 'Earth' and 'metron' means 'measurement'</p>"+
+                "<p>Geometry is derived from Ancient Greek words  'Geo' means 'Earth' and 'metron' means 'measurement'</p>"+
                 "<p>" +
                 " Geometry is, along with arithmetic, one of the oldest branches of mathematics." +
                 "</p>" +
@@ -63,8 +63,8 @@ public class Theory {
                 "<p>" +
                 "\n" +
                 "</p>" +
-                "<p>A triangle is a 3 sided shape, and the sum of its 3 interior angles is 180˚</p>"+
-                "<p>A square, rectangle or quadrilateral are 4 sided shapes, and the sum of their 4 interior angles is 360˚</p>"+
+                "<p>A triangle is a 3 sided shape, and the sum of its 3 interior angles is 180\u00B0</p>"+
+                "<p>A square, rectangle or quadrilateral are 4 sided shapes, and the sum of their 4 interior angles is 360\u00B0</p>"+
                 "<p>Other polygons like the pentagon, hexagon, heptagon, octagon have 5, 6, 7, 8 sides respectively and varying angles.</p>"+
                 "<p>A circle is the set of all points equal in distance from a center point.</p>"+
                 "</body>" +
