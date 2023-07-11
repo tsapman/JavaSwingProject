@@ -7,6 +7,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+//class for creating the Calculator
 public class ArithmeticPanel extends JPanel {
     private JTextField operand1Field;
     private JTextField operand2Field;
@@ -73,6 +74,7 @@ public class ArithmeticPanel extends JPanel {
         add(buttonPanel, BorderLayout.CENTER);
     }
 
+    //Facilitating the math operations for the calculator
     private void performOperation(Operation operation) {
         String operand1Text = operand1Field.getText();
         String operand2Text = operand2Field.getText();
@@ -84,15 +86,19 @@ public class ArithmeticPanel extends JPanel {
 
             switch (operation) {
                 case ADD:
+                    //calling the method addTwoNumbers from mathOperations class
                     result = mathOperations.addTwoNumbers(operand1,operand2);
                     break;
                 case SUBTRACT:
+                    //calling the method subTwoNumbers from mathOperations class
                     result = mathOperations.subTwoNumbers(operand1,operand2);
                     break;
                 case MULTIPLY:
+                    //calling the method multiTwoNumbers from mathOperations class
                     result = mathOperations.multiTwoNumbers(operand1,operand2);
                     break;
                 case DIVIDE:
+                    //calling the method divideTwoNumbers from mathOperations class
                     result = mathOperations.divideTwoNumbers(operand1,operand2);
                     break;
             }
@@ -103,6 +109,7 @@ public class ArithmeticPanel extends JPanel {
         }
     }
 
+    //basic calculator functionalities
     private enum Operation {
         ADD,
         SUBTRACT,

@@ -99,7 +99,7 @@ public class SmokeTests {
             protected boolean isMatching(JButton button) {
 
                 // the text of button in Choice Menu
-                return "Algebra - Exercises".equals(button.getText());
+                return "Algebra - Calculator".equals(button.getText());
 
             }
         });

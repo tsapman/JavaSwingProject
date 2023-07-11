@@ -35,7 +35,7 @@ public class Application implements ActionListener {
         panel.setLayout(new FlowLayout());
         JLabel titleOfApp = new JLabel("Welcome to Become a Math Legend App!!");
 
-        //Asks the user to input his/her name
+        //Asks the user to input his/her name amd saves that name
         nameLabel = new JLabel("Enter your name:");
         nameLabel.setFont(new Font("Arial", Font.BOLD, 20)); // Increase the font size and style
         nameField = new JTextField(10);
@@ -93,14 +93,14 @@ public class Application implements ActionListener {
         choicesPanel.setLayout(new GridLayout(3, 2, 10, 10)); // 2 rows, 2 columns with spacing
 
         JButton algebraTheoryButton = new JButton("Algebra - Theory");
-        JButton algebraExercisesButton = new JButton("Algebra - Exercises");
+        JButton algebraCalculatorButton = new JButton("Algebra - Calculator");
         JButton geometryTheoryButton = new JButton("Geometry - Theory");
         JButton geometryExercisesButton = new JButton("Geometry - Exercises");
         JButton mathQuizButton = new JButton("Math Quiz");
         JButton aboutUsButton = new JButton("About Us");
 
         choicesPanel.add(algebraTheoryButton);
-        choicesPanel.add(algebraExercisesButton);
+        choicesPanel.add(algebraCalculatorButton);
         choicesPanel.add(geometryTheoryButton);
         choicesPanel.add(geometryExercisesButton);
         choicesPanel.add(mathQuizButton);
@@ -121,7 +121,7 @@ public class Application implements ActionListener {
                 showPanel("Algebra - Theory", theory.AlgebraTheory()));
 
         //Second choice cans be accessed by clicking on the button
-        algebraExercisesButton.addActionListener(e -> {
+        algebraCalculatorButton.addActionListener(e -> {
             arithmeticPanel = new ArithmeticPanel();
             panel.removeAll();
             panel.revalidate();
