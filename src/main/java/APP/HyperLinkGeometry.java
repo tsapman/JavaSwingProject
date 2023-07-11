@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-
+//Class for accessing hyperlinks when the user is in the Geometry Theory section
 public class HyperLinkGeometry extends JFrame {
     private String text = "Learn more about Geometry here";
     private JLabel hyperlink = new JLabel(text);
@@ -22,6 +22,7 @@ public class HyperLinkGeometry extends JFrame {
 
         hyperlink.addMouseListener(new MouseAdapter() {
 
+            //by clicking to "Learn more about Geometry here" the user is being redirecting to a site that has more info about Geometry
             @Override
             public void mouseClicked(MouseEvent e) {
                 try {
