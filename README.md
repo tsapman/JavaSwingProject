@@ -1,7 +1,7 @@
 # JavaSwingProject
 To run the main App go to Application class and run Application.main()
 
-Execute tests seperatly:
+Execute tests separately:
 To run Unit tests go to Unit_Tests package and run the TestingMathMethods
 To run Smoke tests go to Smoke_Tests package and run the SmokeTests class
 
