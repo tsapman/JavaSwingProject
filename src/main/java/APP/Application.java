@@ -7,6 +7,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
 
 // Application class includes main method
 public class Application implements ActionListener {
@@ -156,6 +159,20 @@ public class Application implements ActionListener {
         */
         mathQuizButton.addActionListener(e ->
                 mathQuiz = new MathQuiz());
+
+        /*
+        Using Lambda function to facilitate the click
+        6th choice "About us" can be accessed by clicking on the button
+        By clicking this button a tab of the browser pops up and redirects the user to my gitHub page
+        */
+        aboutUsButton.addActionListener(e ->
+        {
+            try {
+                Desktop.getDesktop().browse(new URL("https://github.com/tsapman").toURI());
+            } catch (IOException | URISyntaxException ex) {
+                ex.printStackTrace();
+            }
+        });
 
         frame.pack();
         frame.setMinimumSize(new Dimension(frame.getWidth(), frame.getHeight()));
