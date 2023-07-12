@@ -44,6 +44,7 @@ public class Application implements ActionListener {
         nameField = new JTextField(10);
         submitButton = new JButton("Enter");
 
+        //Sets the font of the text and the foreground
         Font answerFont = new Font("Arial", Font.BOLD, 24);
         Font titleFont = new Font("Arial",Font.BOLD,34);
         nameField.setFont(answerFont);
@@ -58,6 +59,7 @@ public class Application implements ActionListener {
         panel.add(nameField);
         panel.add(submitButton);
 
+        //Putting Action listener to the Enter button, when the user pushes enter it triggers the actionListener
         submitButton.addActionListener(e -> {
             name = nameField.getText();
 
@@ -95,6 +97,7 @@ public class Application implements ActionListener {
         JPanel choicesPanel = new JPanel();
         choicesPanel.setLayout(new GridLayout(3, 2, 10, 10)); // 2 rows, 2 columns with spacing
 
+        //Initializing the JButtons for representing the available options that the user has
         JButton algebraTheoryButton = new JButton("Algebra - Theory");
         JButton algebraCalculatorButton = new JButton("Algebra - Calculator");
         JButton geometryTheoryButton = new JButton("Geometry - Theory");
@@ -102,6 +105,7 @@ public class Application implements ActionListener {
         JButton mathQuizButton = new JButton("Math Quiz");
         JButton aboutUsButton = new JButton("About Us");
 
+        //Adding the choices to the panel
         choicesPanel.add(algebraTheoryButton);
         choicesPanel.add(algebraCalculatorButton);
         choicesPanel.add(geometryTheoryButton);
@@ -109,6 +113,7 @@ public class Application implements ActionListener {
         choicesPanel.add(mathQuizButton);
         choicesPanel.add(aboutUsButton);
 
+        //Setting up the Jpanel
         panel.setBackground(Color.ORANGE);
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         panel.add(greetingLabel);
