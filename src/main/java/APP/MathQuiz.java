@@ -49,6 +49,7 @@ public class MathQuiz extends JFrame implements ActionListener {
 
     public MathQuiz() {
 
+        //Adding components to the panel
         setLayout(new FlowLayout());
         add(titleLabel);
         add(subTitle1Label);
@@ -86,6 +87,7 @@ public class MathQuiz extends JFrame implements ActionListener {
         divButton.setVisible(false);
         remarksField.setVisible(false);
 
+        //Setting Font , Colour for each component in the panel
         getContentPane().setBackground(Color.darkGray);
         rightCounterField.setForeground(Color.blue);
         wrongCounterField.setForeground(Color.red);
@@ -123,6 +125,7 @@ public class MathQuiz extends JFrame implements ActionListener {
         exitButton.setFont(new Font("Arial", Font.BOLD, 60));
         gameOverLabel.setFont(new Font("Arial", Font.BOLD, 95));
 
+        //Setting the position of the remarksfield and wrongCounterField
         remarksField.setHorizontalAlignment(JTextField.CENTER);
         wrongCounterField.setHorizontalAlignment(JTextField.RIGHT);
 

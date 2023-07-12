@@ -4,8 +4,6 @@ import backEnd.MathOperations;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 //class for creating the Calculator
 public class ArithmeticPanel extends JPanel {
@@ -20,7 +18,7 @@ public class ArithmeticPanel extends JPanel {
     private JPanel buttonPanel;
     MathOperations mathOperations = new MathOperations();
 
-
+    //Constructor for ArithmeticPanel class
     public ArithmeticPanel() {
         setLayout(new BorderLayout(10, 10));
 
@@ -46,29 +44,14 @@ public class ArithmeticPanel extends JPanel {
         buttonPanel.add(multiplyButton);
         buttonPanel.add(divideButton);
 
-        addButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                performOperation(Operation.ADD);
-            }
-        });
+        //Adding ActionListener to each JButton
+        addButton.addActionListener(e -> performOperation(Operation.ADD));
 
-        subtractButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                performOperation(Operation.SUBTRACT);
-            }
-        });
+        subtractButton.addActionListener(e -> performOperation(Operation.SUBTRACT));
 
-        multiplyButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                performOperation(Operation.MULTIPLY);
-            }
-        });
+        multiplyButton.addActionListener(e -> performOperation(Operation.MULTIPLY));
 
-        divideButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                performOperation(Operation.DIVIDE);
-            }
-        });
+        divideButton.addActionListener(e -> performOperation(Operation.DIVIDE));
 
         add(inputPanel, BorderLayout.NORTH);
         add(buttonPanel, BorderLayout.CENTER);
