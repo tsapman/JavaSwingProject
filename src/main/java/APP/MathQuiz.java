@@ -2,7 +2,6 @@ package APP;
 
 import backEnd.NameOfTheUser;
 import backEnd.QuizGame;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -38,12 +37,10 @@ public class MathQuiz extends JFrame implements ActionListener {
     Font questionFont = new Font("Arial", Font.BOLD, 25);
     Font answerFont = new Font("Arial", Font.BOLD, 38);
 
-
     int digit1;
     int digit2;
     int correctAnswer;
     String operator = "";
-
 
     final int LIMIT = 10;
 
