@@ -1,9 +1,7 @@
 package APP;
 
-
 import backEnd.MathOperations;
 import backEnd.NameOfTheUser;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -28,7 +26,6 @@ class GeometryQuiz extends JFrame implements ActionListener {
     int qaId;
     HashMap<Integer, String> map;
     MathOperations mathOperations = new MathOperations();
-
 
     //Geometry Quiz constructor
     GeometryQuiz() {
