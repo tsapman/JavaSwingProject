@@ -42,7 +42,6 @@ public class ArithmeticPanel extends JPanel {
         subtractButton.addActionListener(e -> performOperation(Operation.SUBTRACT));
         multiplyButton.addActionListener(e -> performOperation(Operation.MULTIPLY));
         divideButton.addActionListener(e -> performOperation(Operation.DIVIDE));
-
         add(inputPanel, BorderLayout.NORTH);
         add(buttonPanel, BorderLayout.CENTER);
     }
@@ -51,7 +50,6 @@ public class ArithmeticPanel extends JPanel {
     private void performOperation(Operation operation) {
         String operand1Text = operand1Field.getText();
         String operand2Text = operand2Field.getText();
-
         try {
             double operand1 = Double.parseDouble(operand1Text);
             double operand2 = Double.parseDouble(operand2Text);
