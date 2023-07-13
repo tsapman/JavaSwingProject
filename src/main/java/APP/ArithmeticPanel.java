@@ -1,27 +1,20 @@
 package APP;
 
 import backEnd.MathOperations;
-
 import javax.swing.*;
 import java.awt.*;
 
 //class for creating the Calculator
 public class ArithmeticPanel extends JPanel {
-    private JTextField operand1Field;
-    private JTextField operand2Field;
+    private JTextField operand1Field,operand2Field;
     private JLabel resultLabel;
-    private JButton addButton;
-    private JButton subtractButton;
-    private JButton multiplyButton;
-    private JButton divideButton;
-    private JPanel inputPanel;
-    private JPanel buttonPanel;
+    private JButton addButton,subtractButton,multiplyButton,divideButton;
+    private JPanel inputPanel,buttonPanel;
     MathOperations mathOperations = new MathOperations();
 
     //Constructor for ArithmeticPanel class
     public ArithmeticPanel() {
         setLayout(new BorderLayout(10, 10));
-
         inputPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         operand1Field = new JTextField(10);
         operand2Field = new JTextField(10);
@@ -46,11 +39,8 @@ public class ArithmeticPanel extends JPanel {
 
         //Adding ActionListener to each JButton
         addButton.addActionListener(e -> performOperation(Operation.ADD));
-
         subtractButton.addActionListener(e -> performOperation(Operation.SUBTRACT));
-
         multiplyButton.addActionListener(e -> performOperation(Operation.MULTIPLY));
-
         divideButton.addActionListener(e -> performOperation(Operation.DIVIDE));
 
         add(inputPanel, BorderLayout.NORTH);
@@ -99,6 +89,4 @@ public class ArithmeticPanel extends JPanel {
         MULTIPLY,
         DIVIDE
     }
-
-
 }
