@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Smoke_Tests.SmokeTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-07-14T16:38:33" hostname="DESKTOP-7BOF7NR" time="7.543">
+<testsuite name="Smoke_Tests.SmokeTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-07-14T16:40:43" hostname="DESKTOP-7BOF7NR" time="6.7">
   <properties/>
-  <testcase name="checkTheContentOfTheMenuOfChoicesPart1" classname="Smoke_Tests.SmokeTests" time="2.941"/>
-  <testcase name="checkTheContentOfTheMenuOfChoicesPart2" classname="Smoke_Tests.SmokeTests" time="0.989"/>
-  <testcase name="checkButtonInStartingFrame" classname="Smoke_Tests.SmokeTests" time="1.001"/>
-  <testcase name="checkIfTheUserCanEnterAtTheAlgebraTheoryTab" classname="Smoke_Tests.SmokeTests" time="1.936"/>
-  <testcase name="testStartOfTheApp" classname="Smoke_Tests.SmokeTests" time="0.669"/>
+  <testcase name="checkTheContentOfTheMenuOfChoicesPart1" classname="Smoke_Tests.SmokeTests" time="2.345"/>
+  <testcase name="checkTheContentOfTheMenuOfChoicesPart2" classname="Smoke_Tests.SmokeTests" time="1.03"/>
+  <testcase name="checkButtonInStartingFrame" classname="Smoke_Tests.SmokeTests" time="0.951"/>
+  <testcase name="checkIfTheUserCanEnterAtTheAlgebraTheoryTab" classname="Smoke_Tests.SmokeTests" time="1.711"/>
+  <testcase name="testStartOfTheApp" classname="Smoke_Tests.SmokeTests" time="0.66"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
