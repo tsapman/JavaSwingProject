@@ -12,7 +12,7 @@ import javax.swing.*;
 
 import static org.junit.Assert.assertTrue;
 
-//Class that hosts the Smoke tests of the Application
+//Class that  hosts the Smoke tests of the Application
 public class SmokeTests {
     FrameFixture frame;
     NameOfTheUser nameOfTheUser = NameOfTheUser.getInstance();

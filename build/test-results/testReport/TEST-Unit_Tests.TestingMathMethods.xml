@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Unit_Tests.TestingMathMethods" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-07-11T16:28:09" hostname="DESKTOP-7BOF7NR" time="0.005">
+<testsuite name="Unit_Tests.TestingMathMethods" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-07-14T16:38:40" hostname="DESKTOP-7BOF7NR" time="0.015">
   <properties/>
-  <testcase name="testCheckResultOfQuiz" classname="Unit_Tests.TestingMathMethods" time="0.001"/>
+  <testcase name="testCheckResultOfQuiz" classname="Unit_Tests.TestingMathMethods" time="0.006"/>
   <testcase name="testMultiplication" classname="Unit_Tests.TestingMathMethods" time="0.001"/>
   <testcase name="testAddition" classname="Unit_Tests.TestingMathMethods" time="0.0"/>
-  <testcase name="testDivision" classname="Unit_Tests.TestingMathMethods" time="0.0"/>
-  <testcase name="testSubtraction" classname="Unit_Tests.TestingMathMethods" time="0.0"/>
+  <testcase name="testDivision" classname="Unit_Tests.TestingMathMethods" time="0.002"/>
+  <testcase name="testSubtraction" classname="Unit_Tests.TestingMathMethods" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
