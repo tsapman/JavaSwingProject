@@ -8,7 +8,6 @@ import org.assertj.swing.fixture.FrameFixture;
 import org.assertj.swing.fixture.JButtonFixture;
 import org.junit.After;
 import org.junit.Test;
-
 import javax.swing.*;
 
 import static org.junit.Assert.assertTrue;
