@@ -44,7 +44,6 @@ public class SmokeTests {
 
                 // the text of  button in starting page
                 return "Enter".equals(button.getText());
-
             }
         });
 
@@ -52,8 +51,6 @@ public class SmokeTests {
         assertTrue("The button Enter  does not appearing", buttonFixture.isEnabled());
 
         buttonFixture.click();
-
-
     }
 
     //Check the content of Choice menu
@@ -74,7 +71,6 @@ public class SmokeTests {
         });
 
         buttonFixture.click();
-
         JButtonFixture buttonAlgebraTheory = frame.button(new GenericTypeMatcher<>(JButton.class) {
             protected boolean isMatching(JButton button) {
 
@@ -119,7 +115,6 @@ public class SmokeTests {
 
                 // the text of  button in starting page
                 return "Enter".equals(button.getText());
-
             }
         });
 
@@ -127,10 +122,8 @@ public class SmokeTests {
 
         JButtonFixture buttonAlgebraTheory = frame.button(new GenericTypeMatcher<>(JButton.class) {
             protected boolean isMatching(JButton button) {
-
                 // the text of  button in Choice Menu
                 return "Algebra - Theory".equals(button.getText());
-
             }
         });
         assertTrue("the Algebra Theory Button is not displayed",buttonAlgebraTheory.isEnabled());
@@ -179,7 +172,6 @@ public class SmokeTests {
 
                 // the text of  button in starting page
                 return "Enter".equals(button.getText());
-
             }
         });
 
@@ -190,7 +182,6 @@ public class SmokeTests {
 
                 // the text of  button in Choice Menu
                 return "Algebra - Theory".equals(button.getText());
-
             }
         });
 
@@ -198,7 +189,6 @@ public class SmokeTests {
 
         JButtonFixture buttonBackAlgebraTab = frame.button(new GenericTypeMatcher<>(JButton.class) {
             protected boolean isMatching(JButton button) {
-
                 // the text of button in Choice Menu
                 return "Back".equals(button.getText());
 
@@ -208,7 +198,6 @@ public class SmokeTests {
         //If the Jbutton Back is displayed then we are on the Algebra Theory tab
         assertTrue("The Algebra Theory section is NOT displayed properly",buttonBackAlgebraTab.isEnabled());
     }
-
 
     // Clean up resources
     @After
